@@ -13,4 +13,5 @@ class DynamoDBSetupAfterAppStartup(
     override fun onApplicationEvent(event: ContextRefreshedEvent) {
         dynamoDBTableManager.createAndWaitForBeingActive(ProductDocument::class)
     }
+
 }

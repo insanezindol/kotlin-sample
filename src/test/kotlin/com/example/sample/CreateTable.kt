@@ -16,17 +16,20 @@ import com.example.sample.models.ProductDocument
 
 fun main() {
 
+    // 테이블 생성 스크립트
     val awsCredentials: AWSCredentials = BasicAWSCredentials("testAccessKey", "testSecretKey")
     val awsCredentialsProvider: AWSCredentialsProvider = AWSStaticCredentialsProvider(awsCredentials)
     val client: AmazonDynamoDB = AmazonDynamoDBClientBuilder.standard()
         .withCredentials(awsCredentialsProvider)
-        .withEndpointConfiguration(AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "eu-west-1"))
+        .withEndpointConfiguration(AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "ap-northeast-2"))
         .build()
     var dynamoDB = DynamoDB(client)
     val ddbMapper = DynamoDBMapper(client)
 
     val request = ddbMapper.generateCreateTableRequest(ProductDocument::class.java)
-        .withProvisionedThroughput(ProvisionedThroughput(10, 10))
+        .withProvisionedThroughput(ProvisionedThroughput(1L, 1L))
+
+    System.out.println("fff : " + request.tableName)
     try {
         val table: Table = dynamoDB.createTable(request)
         println("create event table success")

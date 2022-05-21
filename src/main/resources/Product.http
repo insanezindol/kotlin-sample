@@ -1,0 +1,41 @@
+###
+# PRODUCT 전체 검색
+GET http://localhost:8080/product/findAll
+
+
+###
+# PRODUCT 아이디 검색
+GET http://localhost:8080/product/findOne?id=1d0724c5-ac68-44d5-9404-260ce914614b
+
+
+###
+# PRODUCT 등록
+POST http://localhost:8080/product/add
+Content-Type: application/json
+
+{
+  "name" : "mouse4",
+  "price" : 40000
+}
+
+
+###
+# PRODUCT 수정
+POST http://localhost:8080/product/modify
+Content-Type: application/json
+
+{
+  "id" : "4c0bfeeb-4ec9-4e0e-8611-a4b59e0ae586",
+  "name" : "modify-test",
+  "price" : 20000
+}
+
+
+###
+# PRODUCT 삭제
+DELETE http://localhost:8080/product/remove
+Content-Type: application/json
+
+{
+  "id" : "4c0bfeeb-4ec9-4e0e-8611-a4b59e0ae586"
+}

@@ -1,4 +1,4 @@
-package com.example.sample.repositories.dynamodb
+package com.example.sample.repositories
 
 import com.example.sample.models.ProductDocument
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan

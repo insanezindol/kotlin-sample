@@ -1,14 +1,10 @@
 amazon:
-  region: eu-west-1
+  region: ap-northeast-2
   accessKey: testAccessKey
   secretKey: testSecretKey
   dynamodb:
-    protocol: http
-    host: localhost
-    port: 8000
-    endpoint: ${amazon.dynamodb.protocol}://${amazon.dynamodb.host}:${amazon.dynamodb.port}
+    endpoint: http://localhost:8000
     tablePrefix: local-
     tables:
       vendor:
         ttlinhrs: 2
-

@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Primary
 
 @Configuration
 class AWSCredentialsProviderConfig {
-
     @Bean
     @Primary
     fun defaultCredentials(

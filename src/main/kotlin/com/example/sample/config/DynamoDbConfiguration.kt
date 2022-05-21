@@ -5,8 +5,6 @@ import com.amazonaws.client.builder.AwsClientBuilder
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
@@ -14,13 +12,11 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
 
 @Configuration
-@EnableDynamoDBRepositories(basePackages = ["com.example.sample.repositories.dynamodb"])
+@EnableDynamoDBRepositories(basePackages = ["com.example.sample.repositories"])
 class DynamoDbConfiguration(
     @Value("\${amazon.region}") val awsRegion: String,
     private val awsCredentialsProvider: AWSCredentialsProvider
 ) {
-
-    private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     @Bean(name = ["amazonDynamoDB"])
     fun amazonDynamoDBLocal(@Value("\${amazon.dynamodb.endpoint}") endpoint: String): AmazonDynamoDB {

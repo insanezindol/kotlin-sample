@@ -2,7 +2,7 @@
 
 이 프로젝트는 Kotlin과 Spring Boot를 사용하여 AWS DynamoDB와 연동하는 REST API 애플리케이션의 샘플입니다.
 
-## 🚀 프로젝트 개요
+## 프로젝트 개요
 
 -   **언어**: Kotlin 1.6.21
 -   **프레임워크**: Spring Boot 2.6.7
@@ -10,7 +10,7 @@
 -   **빌드 도구**: Gradle (Kotlin DSL)
 -   **Java 버전**: 11
 
-## 📋 주요 기능
+## 주요 기능
 
 -   상품(Product) CRUD 작업
 -   DynamoDB와의 연동
@@ -18,7 +18,7 @@
 -   AWS 자격 증명 설정
 -   개발환경용 로컬 DynamoDB 지원
 
-## 🛠️ 기술 스택
+## 기술 스택
 
 ### 핵심 의존성
 
@@ -33,7 +33,7 @@
 -   **Spring Boot DevTools**: 개발 시 자동 재시작
 -   **Lombok**: 보일러플레이트 코드 감소
 
-## 📁 프로젝트 구조
+## 프로젝트 구조
 
 ```
 src/main/kotlin/com/example/sample/
@@ -57,7 +57,7 @@ src/main/kotlin/com/example/sample/
     └── InstantConverter.kt               # 날짜/시간 변환 유틸
 ```
 
-## ⚙️ 설정
+## 설정
 
 ### application.yml 설정
 
@@ -74,7 +74,7 @@ amazon:
                 ttlinhrs: 2 # TTL 설정 (시간)
 ```
 
-## 🔧 실행 방법
+## 실행 방법
 
 ### 1. 로컬 DynamoDB 설정 (선택사항)
 
@@ -96,7 +96,7 @@ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 java -jar build/libs/kotlin-sample-0.0.1-SNAPSHOT.jar
 ```
 
-## 📡 API 엔드포인트
+## API 엔드포인트
 
 ### 상품 관련 API
 
@@ -123,7 +123,7 @@ curl -X POST http://localhost:8080/product/save \
   -d '{"id":"product-123","name":"샘플 상품","price":10000}'
 ```
 
-## 🧪 테스트
+## 테스트
 
 프로젝트에는 다음과 같은 테스트 유틸리티가 포함되어 있습니다:
 
@@ -135,7 +135,7 @@ curl -X POST http://localhost:8080/product/save \
 ./gradlew test
 ```
 
-## 🔧 개발 환경 설정
+## 개발 환경 설정
 
 ### 필수 요구사항
 
@@ -151,7 +151,7 @@ IntelliJ IDEA를 사용하는 것을 권장합니다:
 2. Spring Boot 플러그인 설치
 3. AWS Toolkit 설치 (선택사항)
 
-## 📝 주요 설정 클래스 설명
+## 주요 설정 클래스 설명
 
 ### DynamoDbConfiguration
 
